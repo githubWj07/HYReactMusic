@@ -1,15 +1,28 @@
-import React from 'react';
+import React,{Fragment,memo} from 'react';
 
+import {footerLinks} from '@/common/local-data.js'
 import {
 	FooterWrapper,
 	FooterLeft,
 	FooterRight
 } from './style.js'
-export default function MusicAppFooter(){
+export default memo(function MusicAppFooter(){
 	return(
 		<FooterWrapper>
-			<div className="content">
+			<div className="content wrapper-v2">
 				<FooterLeft>
+					<div className="link-item">
+					{
+						footerLinks.map((item)=>{
+							return (
+								<Fragment key={item.title}>
+									<a href={item.link}>{item.title}</a>
+									<span className="link-line">|</span>
+								</Fragment>
+							)
+						})
+					}
+					</div>
 					<div>
 						<span>网易公司版权所有©1997-2021</span>
 						<span>杭州乐读科技有限公司运营：</span>
@@ -27,9 +40,28 @@ export default function MusicAppFooter(){
 					</div>
 				</FooterLeft>
 				<FooterRight>
-				
+					<div className="unit">
+						<a href="https://web-amped.music.163.com/" className="unit-sprite logo-amped"> </a>
+						<p className="amped-txt">Amped Studio</p>
+					</div>
+					<div className="unit">
+						<a href="https://music.163.com/st/userbasic#/auth" className="unit-sprite logo-auth"> </a>
+						<p>用户认证</p>
+					</div>
+					<div className="unit">
+						<a href="https://music.163.com/st/musician" className="unit-sprite logo-musician"> </a>
+						<p>独立音乐人</p>
+					</div>
+					<div className="unit">
+						<a href="https://music.163.com/web/reward" className="unit-sprite logo-reward"> </a>
+						<p>赞赏</p>
+					</div>
+					<div className="unit">
+						<a href="https://music.163.com/#/login?targetUrl=https%3A%2F%2Fmusic.163.com%2Fuservideo%23%2Fplan" className="unit-sprite logo-cash"> </a>
+						<p>视频奖励</p>
+					</div>
 				</FooterRight>
 			</div>
 		</FooterWrapper>
 	)
-}
+})

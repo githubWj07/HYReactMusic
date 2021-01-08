@@ -74,4 +74,6 @@ a:focus,*:focus {outline:none;}
 
 /* 全局样式 */
 .wrapper-v1 {width: 1100px;margin: 0 auto;}
+.wrapper-v2 {width: 980px;margin: 0 auto;}
 .sprite_01 {background: url(../img/topbar.png) no-repeat;}
+.unit-sprite {background: url(../img/foot_enter_new.png) no-repeat;background-size: 110px 552px;}
